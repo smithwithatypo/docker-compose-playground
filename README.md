@@ -1,1 +1,2 @@
-### Project to play with docker-compose with a backend and postgresql
+### Summary
+Playground to mess around with docker-compose, a Node backend, and a PostgreSQL database
