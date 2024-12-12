@@ -1,0 +1,7 @@
+FROM postgres:latest
+
+# Copy the environment variables file
+COPY .env.database /docker-entrypoint-initdb.d/.env.database
+
+# Expose the PostgreSQL port
+EXPOSE 5432

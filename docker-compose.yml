@@ -8,7 +8,7 @@ services:
     ports:
       - "3000:3000"
     env_file:
-      - .env
+      - .env.backend
     command: ["node", "server.js"]
 
   database:
@@ -18,5 +18,5 @@ services:
     ports:
       - "5432:5432"
     env_file:
-      - .env
+      - .env.database
     command: ["postgres"]
