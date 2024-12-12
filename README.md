@@ -1,1 +1,1 @@
-# Project to play with docker-compose with a backend and postgresql
+### Project to play with docker-compose with a backend and postgresql
