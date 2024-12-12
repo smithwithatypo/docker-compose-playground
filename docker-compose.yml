@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    command: ["node", "server.js"]
+
+  database:
+    build:
+      context: .
+      dockerfile: Dockerfile.database
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    command: ["postgres"]
