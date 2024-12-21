@@ -15,17 +15,6 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {}
 
-  createTable() {
-    this.http.post('http://localhost:3000/create-table', {}).subscribe({
-      next: response => {
-        console.log('Table created', response);
-      },
-      error: error => {
-        console.error('Error creating table', error);
-      }
-    });
-  }
-
   addMessage() {
     this.http.post('http://localhost:3000/insert-message', { message: this.message }).subscribe({
       next: response => {

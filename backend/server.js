@@ -36,30 +36,30 @@ app.get('/', (req, res) => {
 });
 
 // Function to create a table
-app.post('/create-table', async (req, res) => {
-  try {
-    const client = await pool.connect();
-    const tableExists = await client.query(
-      "SELECT EXISTS (SELECT FROM pg_tables WHERE tablename = 'messages');"
-    );
+// app.post('/create-table', async (req, res) => {
+//   try {
+//     const client = await pool.connect();
+//     const tableExists = await client.query(
+//       "SELECT EXISTS (SELECT FROM pg_tables WHERE tablename = 'messages');"
+//     );
 
-    if (!tableExists.rows[0].exists) {
-      await client.query(`
-        CREATE TABLE messages (
-          id SERIAL PRIMARY KEY,
-          message TEXT
-        );
-      `);
-      res.json({ message: 'Table created successfully' });
-    } else {
-      res.json({ message: 'Table already exists' });
-    }
+//     if (!tableExists.rows[0].exists) {
+//       await client.query(`
+//         CREATE TABLE messages (
+//           id SERIAL PRIMARY KEY,
+//           message TEXT
+//         );
+//       `);
+//       res.json({ message: 'Table created successfully' });
+//     } else {
+//       res.json({ message: 'Table already exists' });
+//     }
 
-    client.release();
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+//     client.release();
+//   } catch (error) {
+//     res.status(500).json({ error: error.message });
+//   }
+// });
 
 // Function to insert an entry into the table
 app.post('/insert-message', async (req, res) => {
