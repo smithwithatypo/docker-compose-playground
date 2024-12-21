@@ -1,14 +1,16 @@
 
 <div class="addMessage">
-  <p>input text here</p>
   <input [(ngModel)]="message" placeholder="Enter your message">
-  <button (click)="addMessage()">add a message</button>
-  <p>{{responseMessage}}</p>
+  <button (click)="addMessage()"> add this message to the database </button>
+  <p>db response:  {{responseMessage}}</p>
 </div>
 
-<hr>
+<br>
+<br>
+<br>
+
 <div class="seeAllMessages">
-  <button (click)="getAllMessages()">see all messages</button>
+  <button (click)="getAllMessages()"> see all messages in the database </button>
   <div *ngFor="let msg of messages">
     <p>{{msg.message}}</p>
   </div>
