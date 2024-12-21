@@ -1,0 +1,7 @@
+FROM postgres:latest
+
+COPY init.sql /docker-entrypoint-initdb.d/
+WORKDIR /usr/src/app
+COPY .env ./
+
+EXPOSE 5432

@@ -1,0 +1,20 @@
+<div class="makeNewTable">
+  <button (click)="createTable()">Create Table</button>
+  <p>{{test}}</p>
+</div>
+<hr> 
+
+<div class="addMessage">
+  <p>input text here</p>
+  <input [(ngModel)]="message" placeholder="Enter your message">
+  <button (click)="addMessage()">add a message</button>
+  <p>{{responseMessage}}</p>
+</div>
+
+<hr>
+<div class="seeAllMessages">
+  <button (click)="getAllMessages()">see all messages</button>
+  <div *ngFor="let msg of messages">
+    <p>{{msg.message}}</p>
+  </div>
+</div>

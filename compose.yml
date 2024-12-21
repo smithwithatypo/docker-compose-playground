@@ -1,0 +1,26 @@
+services: 
+  frontend:
+    image: caddy:2.8.4
+    ports:
+      - "4200:80"
+    volumes:
+      - ./frontend/Caddyfile:/etc/caddy/Caddyfile
+      - ./frontend/dist/frontend:/srv
+
+  backend:
+    depends_on:
+      - db
+    build:
+      context: ./backend  # runs dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./backend/.env
+
+  db:
+    build:
+      context: ./db
+    ports:
+      - "5432:5432"
+    env_file:
+      - ./db/.env
