@@ -19,5 +19,5 @@ To see the build script (press q to exit):
 `$ less build_and_deploy.sh`
 
 Install dependencies and run docker compose  
-(note: you need docker running, and the easiest way is downloading the free Docker Desktop at [https://www.docker.com](https://www.docker.com))
+(note: you need docker running, and the easiest way is downloading the free Docker Desktop at [https://www.docker.com](https://www.docker.com))  
 `$ ./build_and_deploy.sh`
